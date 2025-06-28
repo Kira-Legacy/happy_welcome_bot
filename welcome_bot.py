@@ -73,7 +73,6 @@ async def goodbye(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 def main():
     application = Application.builder().token(BOT_TOKEN).build()
-
     
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("startwelcome", startwelcome))
