@@ -20,7 +20,7 @@ async def startwelcome(update: Update, context: ContextTypes.DEFAULT_TYPE):
     global welcome_enabled
     welcome_enabled = True
     await update.message.reply_text(
-        "Welcome messages have been enabled!🍀 \n" 
+        "Welcome messages have been enabled!🍀 \n\n" 
         "I'll now greet new members when they join.😊"
         )
 
@@ -28,13 +28,13 @@ async def stopwelcome(update: Update, context: ContextTypes.DEFAULT_TYPE):
     global welcome_enabled
     welcome_enabled = False
     await update.message.reply_text(
-    "Welcome messages have been disabled.🙅🏾‍♂️🙅🏾‍♀️ \n" 
+    "Welcome messages have been disabled.🙅🏾‍♂️🙅🏾‍♀️ \n\n" 
     "I won't greet new members for now.😴")
 
 async def startbye(update: Update, context: ContextTypes.DEFAULT_TYPE):
     global bye_enabled
     bye_enabled = True
-    await update.message.reply_text("Goodbye messages have been enabled!💁🏾‍♂️ \n " 
+    await update.message.reply_text("Goodbye messages have been enabled!💁🏾‍♂️ \n\n " 
     "I'll now say goodbye to members who leave.😢")
 
 async def stopbye(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -52,9 +52,10 @@ async def welcome(update: Update, context: ContextTypes.DEFAULT_TYPE):
         first_name = chat_member.new_chat_member.user.first_name
         last_name = chat_member.new_chat_member.user.last_name or ""
         welcome_message = (
-                f"Hello {first_name} {last_name} 👋🏾, welcome to our awesome community which you are a part of now!  👨🏾‍💻👩🏾‍💻🚀 \n"
-                "We're happy to have you here! Since we are on the same team, feel free to introduce yourself, join the conversation and grow with us. 📈😊 \n"
-                "We believe your presence will be a blessing to the community. 🙏🏾 \n"
+                f"Hello {first_name} {last_name} 👋🏾 \n welcome to our awesome community which you are a part of now!  👨🏾‍💻👩🏾‍💻🚀 \n\n"
+                "We're happy to have you here! Since we are on the same team, feel free to introduce yourself, join the conversation and grow with us. 📈😊 \n\n"
+                "We believe your presence will be a blessing to the community. 🙏🏾 \n\n"
+                "@KiraFix_tech_discussion"
         )
         await context.bot.send_message(chat_id=chat_member.chat.id, text=welcome_message)
 
@@ -69,9 +70,10 @@ async def goodbye(update: Update, context: ContextTypes.DEFAULT_TYPE):
         first_name = chat_member.from_user.first_name
         last_name = chat_member.from_user.last_name or ""
         goodbye_message = (
-            f"Goodbye {first_name} {last_name} 😢, we're sad to see you leave our community. \n"
-            "We wish you all the best! 🙏🏾 and We are going to miss you 🥺🥺 \n" 
-            "You're always welcome back at KiraFix💡Community! ❤️"
+            f"Goodbye {first_name} {last_name} 😢 \n we're sad to see you leave our community. \n\n"
+            "We wish you all the best! 🙏🏾 and We are going to miss you 🥺🥺 \n\n" 
+            "You're always welcome back at KiraFix💡Community! ❤️ \n\n"
+            "@KiraFix_tech_discussion"
         )
         await context.bot.send_message(chat_id=update.chat_member.chat.id, text=goodbye_message)
 
